@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Restore') {
           agent {
-          docker { image 'node:latest' }
+          docker { image 'node:12.7-alpine' }
       }
             steps {
                 sh 'npm cache clean --force '
