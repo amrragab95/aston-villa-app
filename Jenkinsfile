@@ -6,6 +6,7 @@ pipeline {
         docker 'node:14.2.0-alpine3.11'
       }
             steps {
+                sh 'npm cache clean --force '
                 sh 'npm install'
                 sh 'npm i -g @angular/cli'
                 stash includes: 'node_modules/', name: 'node_modules'
