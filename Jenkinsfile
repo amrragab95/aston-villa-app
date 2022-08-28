@@ -11,7 +11,7 @@ pipeline {
         }
           stage('Lint') {
       agent {
-        docker {image 'amrragab/project-repo'}
+        docker { image 'amrragab/project-repo' }
       }
       steps {
         unstash 'node_modules'
