@@ -7,7 +7,7 @@ pipeline {
       }
             steps {
                 sh 'npm cache clean --force '
-                sh 'npm install'
+                sh 'npm install -U node'
                 sh 'npm i -g @angular/cli'
                 stash includes: 'node_modules/', name: 'node_modules'
             }
