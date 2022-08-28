@@ -9,6 +9,15 @@ pipeline {
                 stash includes: 'node_modules/', name: 'node_modules'
             }
         }
+          stage('Lint') {
+      agent {
+        docker {image 'amrragab/project-repo'}
+      }
+      steps {
+        unstash 'node_modules'
+        sh ’npm lint'
+      }
+    }
         stage('Build') {
             steps {
                 sh 'ng build'
