@@ -6,7 +6,6 @@ pipeline {
           docker { image 'amrragab/project-repo' }
       }
             steps {
-                sh 'npm install'
                 stash includes: 'node_modules/', name: 'node_modules'
             }
         }
