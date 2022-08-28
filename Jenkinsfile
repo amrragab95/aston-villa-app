@@ -6,9 +6,7 @@ pipeline {
           docker { image 'amrragab/project-repo' }
       }
             steps {
-                sh 'npm cache clean --force '
-                sh 'npm install -U node'
-                sh 'npm i -g @angular/cli'
+                sh 'npm install'
                 stash includes: 'node_modules/', name: 'node_modules'
             }
         }
