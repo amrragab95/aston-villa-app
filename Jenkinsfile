@@ -3,15 +3,15 @@ pipeline {
     stages {
         stage('Restore') {
           agent {
-          docker { image 'amrragab/project-repo' }
+          docker { image 'alexsuch/angular-cli:latest' }
       }
             steps {
-                stash includes: 'node_modules/', name: 'node_modules'
+                sh ' npm install --package-lock' 
             }
         }
           stage('Lint') {
       agent {
-        docker { image 'amrragab/project-repo' }
+        docker { image 'alexsuch/angular-cli:latest' }
       }
       steps {
         sh 'ng lint'
