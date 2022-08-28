@@ -14,7 +14,6 @@ pipeline {
         docker { image 'amrragab/project-repo' }
       }
       steps {
-        unstash 'node_modules'
         sh 'npm lint'
       }
     }
