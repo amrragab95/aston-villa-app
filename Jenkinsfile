@@ -15,7 +15,7 @@ pipeline {
       }
       steps {
         unstash 'node_modules'
-        sh ’npm lint'
+        sh 'npm lint'
       }
     }
         stage('Build') {
