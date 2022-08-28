@@ -14,7 +14,7 @@ pipeline {
         docker { image 'amrragab/project-repo' }
       }
       steps {
-        sh 'npm lint'
+        sh 'ng lint'
       }
     }
         stage('Build') {
