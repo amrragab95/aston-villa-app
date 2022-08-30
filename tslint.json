@@ -23,8 +23,8 @@
       "extends": "tslint:latest",
   "linterOptions": {
       "exclude": [
-          "bin",
-          "lib/*generated.js"
+          "*/*.ts",
+          "**/*.ts"
       ]
   },
     "import-spacing": true,
