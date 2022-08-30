@@ -8,7 +8,7 @@ pipeline {
       }
            stage('lint') {
        steps {
-        sh 'npm lint --format=checkstyle'
+        sh 'ng lint '
        }
       }           
 
