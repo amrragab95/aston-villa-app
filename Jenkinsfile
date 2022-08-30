@@ -10,7 +10,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'ng test --browsers ChromeHeadless  --watch=false > text.txt'
+                sh 'ng test --browsers ChromeHeadless  --watch=false '
             }
         }  
             
