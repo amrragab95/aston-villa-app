@@ -6,9 +6,17 @@ pipeline {
         sh 'npm install'
        }
       }
-            
+           stage('lint') {
+       steps {
+        sh 'npm lint --format=checkstyle'
+       }
+      }           
 
-
+        stage('Test') {
+            steps {
+                sh 'ng test --browsers ChromeHeadless  --watch=false '
+            }
+        }  
             
            stage('e2e') {
             steps {
