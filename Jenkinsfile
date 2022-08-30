@@ -1,28 +1,38 @@
 pipeline {
      agent none     
     stages {
-          stage('Lint') {
-      agent {
-        docker { image 'alexsuch/angular-cli:latest' }
+          stage('Dependencies') {
+       steps {
+        sh 'npm install -g @angular/cli@7'
+        sh 'npm install'
+       }
       }
+            
+          stage('Lint') {
+
       steps {
         sh 'ng lint'
       }
-    }
+        stage('Test') {
+            steps {
+                sh 'ng test--browsers ChromeHeadless  --watch=false'
+            }
+        }  
+            
+           stage('e2e') {
+            steps {
+                sh 'ng e2e'
+            }
+        }  
         stage('Build') {
             steps {
                 sh 'ng build'
             }
         }
-        stage('Test') {
-            steps {
-                sh 'ng test'
-            }
-        }        
+        
         stage('Deploy') {
             steps {
-                sh 'rm ../../apps/*'
-                sh 'cp ./dist/apps/* ../../apps/'
+                sh 'ls'
             }
         }             
     }
