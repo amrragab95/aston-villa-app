@@ -7,15 +7,10 @@ pipeline {
        }
       }
             
-          stage('Lint') {
 
-      steps {
-        sh 'ng lint'
-      }
-          }
         stage('Test') {
             steps {
-                sh 'ng test--browsers ChromeHeadless  --watch=false'
+                sh 'ng test--browsers ChromeHeadless  --watch=false > text.txt'
             }
         }  
             
