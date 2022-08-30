@@ -3,8 +3,7 @@ pipeline {
     stages {
           stage('Dependencies') {
        steps {
-        sh 'sudo npm install -g @angular/cli@7'
-        sh 'sudo npm install'
+        sh 'npm install'
        }
       }
             
