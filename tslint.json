@@ -20,6 +20,13 @@
       true,
       "rxjs/Rx"
     ],
+      "extends": "tslint:latest",
+  "linterOptions": {
+      "exclude": [
+          "bin",
+          "lib/*generated.js"
+      ]
+  },
     "import-spacing": true,
     "indent": [
       true,
