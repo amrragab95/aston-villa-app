@@ -30,7 +30,6 @@ pipeline {
                     sh 'docker docker push amrragab/siemens-project:${env.BUILD_ID} '
                 }
             }
-        }
 
     stage('Deploy App') {
       steps {
