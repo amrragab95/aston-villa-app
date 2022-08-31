@@ -52,7 +52,7 @@ mcFWp5CW6h0FnvsI0tnwkxaH1kblPmWjzzCh9x/Rc5EQWLV/oKIGdCeRolTPFW7k
 LJBj2y12SWy5Xd0+MMLNJX4CEeOpzRi7QlBAQa8yRuXGo6wRxivRg60Z5y41TZyb
 zL00LtZ8m6ACm+PsmOU+Hs+hwjhEIZunYEMeoYAYwuAO2z6NK9HGtQBcIrKU9GNX
 a2qdM+LMO2DrWjjqQnxPy8/vkA==
------END CERTIFICATE-----''', credentialsId: 'd36be92a-b5dd-4ed9-a6bc-0ec4247d89d1', serverUrl: 'http://90.84.174.170:8080/') {
+-----END CERTIFICATE-----''', credentialsId: 'd36be92a-b5dd-4ed9-a6bc-0ec4247d89d1', serverUrl: 'https://10.0.1.220:5443') {
       sh 'kubectl apply -f deploy.yml '
    }        }
       }
