@@ -10,7 +10,12 @@ pipeline {
        steps {
         sh 'ng lint '
        }
-      }            
+      }
+       stage('Test') {
+            steps {
+                sh 'ng test --browsers ChromeHeadless --watch=false '
+            }
+        }
            stage('e2e') {
             steps {
                 sh 'ng e2e'
