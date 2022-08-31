@@ -13,7 +13,8 @@ pipeline {
       }
        stage('Test') {
             steps {
-                sh 'ng test  '
+                sh 'ng test '
+                sh ' ls '
             }
         }
            stage('e2e') {
