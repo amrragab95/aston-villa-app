@@ -11,12 +11,7 @@ pipeline {
         sh 'ng lint '
        }
       }
-       stage('Test') {
-            steps {
-                sh 'ng test '
-                sh ' ls '
-            }
-        }
+
            stage('e2e') {
             steps {
                 sh 'ng e2e'
