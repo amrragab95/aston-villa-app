@@ -13,7 +13,7 @@ pipeline {
       }
        stage('Test') {
             steps {
-                sh 'ng tests --watch=false '
+                sh 'ng test --watch=false '
             }
         }
            stage('e2e') {
