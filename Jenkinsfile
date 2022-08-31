@@ -21,6 +21,19 @@ pipeline {
                 sh 'ng build'
             }
         }
+      stage('Artifacts'){
+        jfPipelines (
+    outputResources: """[
+        {
+            "name": "pipelinesBuildInfo",
+            "content": {
+                "buildName": "${env.JOB_NAME}",
+                "buildNumber": "${env.BUILD_NUMBER}"
+            }
+        }
+    ]"""
+)
+      }
       
         
       stage("Build image") {
