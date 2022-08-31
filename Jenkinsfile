@@ -23,7 +23,7 @@ pipeline {
         }
       stage('Artifacts'){
         steps {
-        jfPipelines (
+          jfPipelines (
     outputResources: """[
         {
             "name": "pipelinesBuildInfo",
@@ -33,8 +33,10 @@ pipeline {
             }
         }
     ]"""
-  }
 )
+          
+       
+  }
       }
       
         
