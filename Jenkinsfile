@@ -23,19 +23,8 @@ pipeline {
         }
       stage('Artifacts'){
         steps {
-          jfPipelines (
-    outputResources: """[
-        {
-            "name": "pipelinesBuildInfo",
-            "content": {
-                "buildName": "${env.JOB_NAME}",
-                "buildNumber": "${env.BUILD_NUMBER}"
-            }
-        }
-    ]"""
-)
-          
-       
+          sh ' npm publish --registry https://amrjfrogserver.jfrog.io/artifactory/api/npm/npm-repo-npm/ '
+)      
   }
       }
       
