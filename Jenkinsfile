@@ -21,11 +21,34 @@ pipeline {
                 sh 'ng build'
             }
         }
+      
         
-        stage('Deploy') {
+      stage("Build image") {
             steps {
-                sh 'ls'
+                script {
+                    myapp = docker.build("vamsijakkula/hellowhale:${env.BUILD_ID}")
+                }
             }
-        }             
+        }
+    
+      stage("Push image") {
+            steps {
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+                            myapp.push("latest")
+                            myapp.push("${env.BUILD_ID}")
+                    }
+                }
+            }
+        }
+
+    
+    stage('Deploy App') {
+      steps {
+        script {
+          kubernetesDeploy(configs: "hellowhale.yml", kubeconfigId: "mykubeconfig")
+        }
+      }
+    }             
     }
 }
