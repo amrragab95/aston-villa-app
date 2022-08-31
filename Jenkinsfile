@@ -26,8 +26,8 @@ pipeline {
       stage("Build image") {
             steps {
               
-                    sh 'docker build -t amrragab/siemens-project:${env.BUILD_ID} . '
-                    sh 'docker docker push amrragab/siemens-project:${env.BUILD_ID} '
+                    sh 'docker build -t amrragab/siemens-project:latest . '
+                    sh 'docker docker push amrragab/siemens-project:latest '
                 }
             }
 
