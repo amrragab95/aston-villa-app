@@ -32,7 +32,6 @@ pipeline {
             }
         }
 
-    
     stage('Deploy App') {
       steps {
         script {
@@ -41,3 +40,4 @@ pipeline {
       }
     }             
     }
+}
