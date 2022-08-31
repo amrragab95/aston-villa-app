@@ -8,6 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
+    "publishConfig":{"registry":"https://amrjfrogserver.jfrog.io/artifactory/api/npm/npm-repo-npm/"}
   },
   "private": false,
   "dependencies": {
@@ -48,5 +49,5 @@
     "tslint": "~5.11.0",
     "typescript": "~3.1.6"
   }
-  "publishConfig":{"registry":"https://amrjfrogserver.jfrog.io/artifactory/api/npm/npm-repo-npm/"}
+  
 }
