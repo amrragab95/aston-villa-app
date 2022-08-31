@@ -26,9 +26,7 @@ pipeline {
           sh ' npm publish --registry https://amrjfrogserver.jfrog.io/artifactory/api/npm/npm-repo-npm/ '
 )      
   }
-      }
-      
-        
+
       stage("Build image") {
             steps {
               
