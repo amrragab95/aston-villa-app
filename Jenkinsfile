@@ -13,7 +13,7 @@ pipeline {
       }
        stage('Test') {
             steps {
-                sh 'ng test --browsers ChromeHeadless --watch=false '
+                sh 'npm install && npm rebuild && ng test --browsers ChromeHeadless --watch=false '
             }
         }
            stage('e2e') {
