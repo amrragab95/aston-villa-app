@@ -23,7 +23,6 @@ pipeline {
         }
       stage('Artifacts'){
         steps {
-          sh ' npm login'
           sh ' npm publish --registry https://amrjfrogserver.jfrog.io/artifactory/api/npm/npm-repo-npm/ '
         }     
   }
