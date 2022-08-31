@@ -27,7 +27,7 @@ pipeline {
             steps {
               
                     sh 'docker build -t amrragab/siemens-project:latest . '
-                    sh 'docker docker push amrragab/siemens-project:latest '
+                    sh 'docker push amrragab/siemens-project:latest '
                 }
             }
 
