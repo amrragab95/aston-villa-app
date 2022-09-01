@@ -18,9 +18,11 @@ pipeline {
           sh 'ng test --progress=false --watch false'
         }
        
-       always {
-        junit '**/test-results.xml'
-       }
+        post {
+          always {
+            junit "test-results.xml"
+          }
+      }
     }
 
            stage('e2e') {
