@@ -13,10 +13,15 @@ pipeline {
       }
       
      stage('Test') {
+       
+       steps {
         withEnv(["CHROME_BIN=/usr/bin/chromium-browser"]) {
           sh 'ng test --progress=false --watch false'
         }
+       }
+       always {
         junit '**/test-results.xml'
+       }
     }
 
            stage('e2e') {
