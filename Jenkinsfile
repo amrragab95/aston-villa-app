@@ -19,9 +19,7 @@ pipeline {
         }  
         stage('Build') {
             steps {
-                sh 'ng build'
-               sh 'ng build maro'
-              
+                sh 'ng build' 
             }
           post {
         failure {
