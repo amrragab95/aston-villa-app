@@ -36,14 +36,14 @@ pipeline {
             }
          
     }
-        }
+        
       stage('Publish'){
         steps {
           sh ' npm publish --registry https://amrjfrogserver.jfrog.io/artifactory/api/npm/npm-local/ '
         }     
   }
 
-      stage("Build image") {
+      stage("Push") {
             steps {
               
                     sh 'docker build -t amrragab/siemens-project:latest . '
