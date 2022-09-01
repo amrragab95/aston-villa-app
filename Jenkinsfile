@@ -20,10 +20,11 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'ng build'
+               sh 'ng build maro'
               
             }
           post {
-        always {
+        failure {
             echo 'I will always say Hello again!'
             
             emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
