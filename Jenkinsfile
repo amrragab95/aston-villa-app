@@ -87,4 +87,5 @@ a2qdM+LMO2DrWjjqQnxPy8/vkA==
                 subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
             
         }
+          }
 }
