@@ -11,6 +11,13 @@ pipeline {
         sh 'ng lint '
        }
       }
+      
+     stage('Test') {
+        withEnv(["CHROME_BIN=/usr/bin/chromium-browser"]) {
+          sh 'ng test --progress=false --watch false'
+        }
+        junit '**/test-results.xml'
+    }
 
            stage('e2e') {
             steps {
@@ -19,17 +26,9 @@ pipeline {
         }  
         stage('Build') {
             steps {
-                sh 'ng build' 
+                sh 'ng build --prod --progress=false' 
             }
-          post {
-        failure {
-            echo 'I will always say Hello again!'
-            
-            emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
-                recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
-                subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
-            
-        }
+         
     }
         }
       stage('Artifacts'){
@@ -73,4 +72,13 @@ a2qdM+LMO2DrWjjqQnxPy8/vkA==
       }
     }             
     }
+          post {
+        failure {
+            echo 'I will always say Hello again!'
+            
+            emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
+                recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
+                subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
+            
+        }
 }
