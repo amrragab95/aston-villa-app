@@ -1,6 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
+  annotations:
+    kubernetes.io/elb.id: 9e7b2a55-487d-40cc-9265-b13884b3a673
   labels:
     app: amr
   name: amr
