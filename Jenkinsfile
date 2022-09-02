@@ -50,7 +50,7 @@ pipeline {
       }
             steps {
                withDockerRegistry(credentialsId: 'docker', url: 'https://index.docker.io/v1/') {
-               def realappimage = docker.build dockerName + "/" + imageName + ":" + ${env.BUILD_NUMBER}            
+               def astonvillaimage = docker.build dockerName + "/" + imageName + ":" + ${env.BUILD_NUMBER}            
                astonvillaimage.push('latest')
                astonvilla.push( "release-" + commitId.trim() )
                 
