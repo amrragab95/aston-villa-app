@@ -51,9 +51,9 @@ pipeline {
             steps {
                        script {
                withDockerRegistry(credentialsId: 'docker', url: 'https://index.docker.io/v1/') {
-               def astonvillaimage = docker.build dockerName + "/" + imageName + ":" + ${env.BUILD_NUMBER}            
+               def astonvillaimage = docker.build dockerName + "/" + imageName + ":" + "ma"           
                astonvillaimage.push('latest')
-               astonvillaimage.push( "release-" + ${env.BUILD_NUMBER} )
+               astonvillaimage.push( "release-" + "ma" )
                 
                      }
                     }
