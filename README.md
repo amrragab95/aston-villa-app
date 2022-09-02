@@ -16,7 +16,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Publish
 
-Run 'npm publish' to store code artifacts to an an artifact repository tool for ex (Jfrog)
+Run 'npm publish' to store code artifacts to an an artifact repository tool for ex [Jfrog] (https://jfrog.com/artifactory/)
 
 ## Running unit tests
 
