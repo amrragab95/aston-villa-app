@@ -44,10 +44,17 @@ pipeline {
   }
 
       stage("Push") {
+       environment {
+        imageName = 'siemens-project'
+        dockerName = 'amrragab'
+      }
             steps {
-              
-                    sh 'docker build -t amrragab/siemens-project:latest . '
-                    sh 'docker push amrragab/siemens-project:latest '
+               withDockerRegistry(credentialsId: 'docker', url: 'https://index.docker.io/v1/') {
+               def realappimage = docker.build dockerName + "/" + imageName + ":" + ${env.BUILD_NUMBER}            
+               astonvillaimage.push('latest')
+               astonvilla.push( "release-" + commitId.trim() )
+                
+            }
                 }
             }
    stage('Approval') {
