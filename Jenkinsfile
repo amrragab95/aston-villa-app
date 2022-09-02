@@ -90,7 +90,7 @@ a2qdM+LMO2DrWjjqQnxPy8/vkA==
     }
           post {
         failure {
-            echo 'I will always say Hello again!'
+            echo 'Seems like deplymanet failed, an email will be sent to Jenkins Admin'
             
             emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
                 recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
