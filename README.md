@@ -6,9 +6,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Installing
+Run 'npm install' to install dependencies.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Linting
+Run 'ng lint' to lint the code.
 
 ## Build
 
@@ -18,9 +20,9 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run 'npm publish' to store code artifacts to an an artifact repository tool for ex [Jfrog] (https://jfrog.com/artifactory/)
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Push
+Run Docker Build to create an image from the Dockerfile.
+Run Docker Push to push the image with latest tag either to a public repo or a private one as desired.
 
 ## Running end-to-end tests
 
