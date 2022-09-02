@@ -14,16 +14,16 @@ pipeline {
       
 //    stage('Test') {
        
-       steps {
-          sh 'ng test --progress=false --watch false'
-        }
+//       steps {
+//          sh 'ng test --progress=false --watch false'
+//        }
 
-        post {
-          always {
-            junit "test-results.xml"
-          }
-      }
-    }
+ //       post {
+//        always {
+//          junit "test-results.xml"
+//          }
+//      }
+//    }
 //
            stage('e2e') {
             steps {
