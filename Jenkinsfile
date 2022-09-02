@@ -81,7 +81,7 @@ kubeconfig(caCertificate: '', credentialsId: 'd36be92a-b5dd-4ed9-a6bc-0ec4247d89
     }
           post {
         failure {
-            echo 'Seems like deplymanet failed, an email will be sent to Jenkins Admin'
+            echo 'Seems like deployment failed, an email will be sent to Jenkins Admin'
             
             emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
                 recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
