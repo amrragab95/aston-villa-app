@@ -25,11 +25,11 @@ pipeline {
 //      }
 //    }
 //
-           stage('e2e') {
-            steps {
-                sh 'ng e2e'
-            }
-        }  
+//           stage('e2e') {
+//            steps {
+//                sh 'ng e2e'
+//            }
+//        }  
         stage('Build') {
             steps {
                 sh 'ng build --prod --progress=false' 
